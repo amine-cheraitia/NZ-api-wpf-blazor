@@ -71,7 +71,7 @@
                         <Label Grid.Row="2" Grid.Column="0" Content="ReigionImageUrl" Grid.ColumnSpan="3" Margin="0,0,221,20" Grid.RowSpan="2"/>
                         <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ReigionImageUrl}" Margin="0,0,0,20" Grid.RowSpan="2"  x:Name="regionimgurlRn"/>
 
-                        <Button Grid.Row="3" Grid.ColumnSpan="3" Content="add" Click="PutRegion"/>
+                        <Button Grid.Row="3" Grid.ColumnSpan="3" Content="add" Click="AddRegion"/>
                     </Grid>
                 </StackPanel>
             </Border>

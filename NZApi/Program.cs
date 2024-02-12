@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NZApi.Data;
+using NZApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<NZDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+//inject Repository
+builder.Services.AddScoped<IRegionRepository, RegionRepository>();
 
 var app = builder.Build();
 

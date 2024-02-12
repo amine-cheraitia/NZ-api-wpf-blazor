@@ -43,6 +43,7 @@ namespace NZWpfApp
 
         private async void AddRegion(object sender, RoutedEventArgs e)
         {
+            try { 
             var newRegion = new Region
             {
                 Name = nameRn.Text ,
@@ -67,10 +68,11 @@ namespace NZWpfApp
             {
                 MessageBox.Show("Erreur lors de l'ajout de la région.");
             }
-
-
-            
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite lors de l'ajout de la région: " + ex.Message);
+            }
         }
 
 
