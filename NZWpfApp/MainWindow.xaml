@@ -5,8 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NZWpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="950" ResizeMode="CanResizeWithGrip">
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+        <Label x:Name="labl" Grid.Row="0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Content="random crud"></Label>
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" Margin="5" x:Name="regionDG" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Code" Binding="{Binding Code}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="ReigionImageUrl" Binding="{Binding ReigionImageUrl}" />
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="5">
+                <StackPanel Margin="5">
+                    <Label Content="add" HorizontalAlignment="Center"></Label>
+                    <Grid Margin="5" x:Name="AddNewRegion">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="57*"/>
+                            <ColumnDefinition Width="17*"/>
+                            <ColumnDefinition Width="74*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Name" Grid.ColumnSpan="3" Margin="0,0,221,26" Grid.RowSpan="2"/>
+                        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Name}" Margin="0,0,0,26" Grid.RowSpan="2" x:Name="nameRn"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Code" Grid.ColumnSpan="3" Margin="0,0,221,26" Grid.RowSpan="2"/>
+                        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Code}" Margin="0,0,0,26" Grid.RowSpan="2"  x:Name="codeRn"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="ReigionImageUrl" Grid.ColumnSpan="3" Margin="0,0,221,20" Grid.RowSpan="2"/>
+                        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ReigionImageUrl}" Margin="0,0,0,20" Grid.RowSpan="2"  x:Name="regionimgurlRn"/>
+
+                        <Button Grid.Row="3" Grid.ColumnSpan="3" Content="add" Click="AddRegion"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
 
     </Grid>
+
+
+
 </Window>
