@@ -22,6 +22,22 @@
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="ReigionImageUrl" Binding="{Binding ReigionImageUrl}" />
 
+                <DataGridTemplateColumn Header="Update Region">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Click="UpdateRegion"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate> 
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Delete Region">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Click="UpdateRegion"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
 
         </DataGrid>
@@ -55,7 +71,37 @@
                         <Label Grid.Row="2" Grid.Column="0" Content="ReigionImageUrl" Grid.ColumnSpan="3" Margin="0,0,221,20" Grid.RowSpan="2"/>
                         <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ReigionImageUrl}" Margin="0,0,0,20" Grid.RowSpan="2"  x:Name="regionimgurlRn"/>
 
-                        <Button Grid.Row="3" Grid.ColumnSpan="3" Content="add" Click="AddRegion"/>
+                        <Button Grid.Row="3" Grid.ColumnSpan="3" Content="add" Click="PutRegion"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="5">
+                <StackPanel Margin="5">
+                    <Label Content="add" HorizontalAlignment="Center"></Label>
+                    <Grid Margin="5" x:Name="UpdateRegiongr">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="57*"/>
+                            <ColumnDefinition Width="17*"/>
+                            <ColumnDefinition Width="74*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Name" Grid.ColumnSpan="3" Margin="0,0,221,26" Grid.RowSpan="2"/>
+                        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Name}" Margin="0,0,0,26" Grid.RowSpan="2" x:Name="nameRnUp"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Code" Grid.ColumnSpan="3" Margin="0,0,221,26" Grid.RowSpan="2"/>
+                        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Code}" Margin="0,0,0,26" Grid.RowSpan="2"  x:Name="codeRnUp"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="ReigionImageUrl" Grid.ColumnSpan="3" Margin="0,0,221,20" Grid.RowSpan="2"/>
+                        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ReigionImageUrl}" Margin="0,0,0,20" Grid.RowSpan="2"  x:Name="regionimgurlRnUp"/>
+
+                        <Button Grid.Row="3" Grid.ColumnSpan="3" Content="add" Click="PutRegion"/>
                     </Grid>
                 </StackPanel>
             </Border>
