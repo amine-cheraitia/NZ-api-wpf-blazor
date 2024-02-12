@@ -33,7 +33,7 @@
                 <DataGridTemplateColumn Header="Delete Region">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit" Click="UpdateRegion"></Button>
+                            <Button Content="Delete" Click="DeleteRegion"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -101,7 +101,7 @@
                         <Label Grid.Row="2" Grid.Column="0" Content="ReigionImageUrl" Grid.ColumnSpan="3" Margin="0,0,221,20" Grid.RowSpan="2"/>
                         <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ReigionImageUrl}" Margin="0,0,0,20" Grid.RowSpan="2"  x:Name="regionimgurlRnUp"/>
 
-                        <Button Grid.Row="3" Grid.ColumnSpan="3" Content="add" Click="PutRegion"/>
+                        <Button Grid.Row="3" Grid.ColumnSpan="3" Content="Update" Click="PutRegion"/>
                     </Grid>
                 </StackPanel>
             </Border>

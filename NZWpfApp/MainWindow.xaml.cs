@@ -14,6 +14,7 @@ namespace NZWpfApp
     {
         private readonly HttpClient client = new HttpClient();
         private Guid updatedID;
+        private Guid DeletedID;
         public MainWindow()
         {
             client.BaseAddress = new Uri("https://localhost:7283/api/");
@@ -109,6 +110,27 @@ namespace NZWpfApp
             else
             {
                 MessageBox.Show("Erreur lors de l'ajout de la région.");
+            }
+
+
+        }
+
+        private async void DeleteRegion(object sender, RoutedEventArgs e)
+        {
+            Region selectedRegion = ((FrameworkElement)sender).DataContext as Region;
+            this.DeletedID = selectedRegion.Id;
+
+            var response = await client.DeleteAsync($"Regions/{DeletedID}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Région supprimée avec succès!");
+                // Recharger la liste des régions après la suppression
+                getAll();
+            }
+            else
+            {
+                MessageBox.Show("Erreur lors de la suppression de la région.");
             }
 
 
